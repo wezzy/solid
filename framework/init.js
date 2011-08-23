@@ -5,5 +5,3 @@
 
 // Global namespace for Solid
 var S = {};
-
-});
