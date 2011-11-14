@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+$script	framework/libs/script.js	/^  var $script = function(paths, idOrDone, optDone) {$/;"	f
+$script.callback	framework/libs/script.js	/^    function callback() {$/;"	f
+$script.loopFn	framework/libs/script.js	/^    function loopFn(item) {$/;"	f
+$script.noConflict	framework/libs/script.js	/^  $script.noConflict = function () {$/;"	f
+$script.ready	framework/libs/script.js	/^  $script.ready = function(deps, ready, req) {$/;"	f
+Class	framework/libs/classy.js	/^  var Class = function() {};$/;"	f
+Class.$extend	framework/libs/classy.js	/^  Class.$extend = function(properties) {$/;"	f
+Class.$noConflict	framework/libs/classy.js	/^  Class.$noConflict = function() {$/;"	f
+Class.$withData	framework/libs/classy.js	/^  Class.$withData = function(data) {$/;"	f
+S.Logger	framework/src/logger.js	/^S.Logger = function(){$/;"	f
+cheapNew	framework/libs/classy.js	/^  function cheapNew(cls) {$/;"	f
+create	framework/libs/script.js	/^  function create(path, fn) {$/;"	f
+each	framework/libs/script.js	/^      function each(ar, fn) {$/;"	f
+getOwnProperty	framework/libs/classy.js	/^  function getOwnProperty(obj, name) {$/;"	f
+old	framework/libs/script.js	/^  var old = win.$script;$/;"	v
+return	framework/libs/classy.js	/^    return Object.prototype.hasOwnProperty.call(obj, name)$/;"	c
+return.hasOwnProperty	framework/libs/classy.js	/^    return Object.prototype.hasOwnProperty.call(obj, name)$/;"	m
+rv	framework/libs/classy.js	/^    rv.prototype = prototype;$/;"	c
+setOrUnset	framework/libs/classy.js	/^  function setOrUnset(obj, key, value) {$/;"	f
+usesSuper	framework/libs/classy.js	/^  function usesSuper(obj) {$/;"	f
+var.rv	framework/libs/classy.js	/^    var rv = function() {$/;"	f

@@ -22,6 +22,21 @@
     <script src="framework/libs/script.js" type="text/javascript"></script>
     <script src="framework/init.js" type="text/javascript"></script>
 
+    <script type="text/javascript">
+
+        // Load the requested libraries and call the function
+        // It ensure that all the loaded classes are added to the S object passed
+        // as argument
+        SOLID.load(["solid.Application","solid.components.Button"], function(S){
+
+            var app = new S.Application();
+            var btn = new S.Button();
+
+        });
+
+    </script>
+
   </body>
 
 </html>
+

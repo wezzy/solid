@@ -6,6 +6,6 @@
  * Make every direct child of app invisible, when the framework is loaded and ready it makes them visible
  * this prevent the browser to render components that are not ready yet.
  */
-.solid-app > *{
+.SApp > *{
   display: none;
 }
