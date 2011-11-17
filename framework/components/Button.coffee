@@ -3,26 +3,31 @@
 # Display a standard button
 ###
 
-solid.load(['solid.components.DisplayObject'], (S)->
+define(
+    "components/Button",
 
-    class solid.components.Button extends S.DisplayObject
+    ['components/DisplayObject'],
 
-        @label
-        @button
-        @_displayed = false
+    (DisplayObject)->
 
-        constructor:(@label)->
-            super()
+        class solid.components.Button extends DisplayObject
 
-            @button = jQuery('<input type="button" />')
+            @label
+            @button
+            @_displayed = false
 
-            if @label
-                @button.attr('value', @label)
-            jQuery(@domElement).append(@button)
+            constructor:(@label)->
+                super()
 
-        render:=>
-            super()
-            if !@_displayed
-                domEl = @getDomElement()
-                $(domEl).append(@button)
+                @button = jQuery('<input type="button" />')
+
+                if @label
+                    @button.attr('value', @label)
+                jQuery(@domElement).append(@button)
+
+            render:=>
+                super()
+                if !@_displayed
+                    domEl = @getDomElement()
+                    $(domEl).append(@button)
 )

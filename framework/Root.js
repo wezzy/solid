@@ -1,4 +1,8 @@
-/* Root Class*/solid.Root = (function() {
-  function Root() {}
-  return Root;
-})();
+(function() {
+  /* Root Class*/  define("Root", function() {
+    return solid.Root = (function() {
+      function Root() {}
+      return Root;
+    })();
+  });
+}).call(this);

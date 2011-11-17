@@ -4,11 +4,16 @@
   this is the container for the entire app
 ###
 
-solid.load(['solid.containers.DisplayObjectContainer'], (S)->
+define(
 
-    class solid.Application extends S.DisplayObjectContainer
+    "Application",
 
-        constructor:->
-            super()
+    ['containers/DisplayObjectContainer'],
 
+    (DisplayObjectContainer)->
+
+        class solid.Application extends DisplayObjectContainer
+
+            constructor:->
+                super()
 )

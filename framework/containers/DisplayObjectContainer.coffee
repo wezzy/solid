@@ -1,35 +1,41 @@
 
-solid.load(['solid.components.DisplayObject'], (S)->
+define(
+    "containers/DisplayObjectContainer",
 
-    class solid.DisplayObjectContainer extends S.DisplayObject
+    ['components/DisplayObject'],
 
-        @children = [];
+    (DisplayObject)->
 
-        constructor:->
-            super()
+        class solid.containers.DisplayObjectContainer extends DisplayObject
 
-        addChild:(displayObject)=>
-            # Save the new DisplayObject into the list
-            @children.push(displayObject)
+            @children = []
 
-            # Add the DisplayObject domElement into the parent domElement
-            jQuery(@domElement).append(displayObject.domElement)
+            constructor:->
+                super()
 
-        ###
-        # Remove a DisplayObject instance from the container
-        # @parameter displayObject a DisplayObject instance that has to be removed
-        ###
-        removeChild:(displayObject)=>
+            addChild:(displayObject)=>
+                # Save the new DisplayObject into the list
+                @children.push(displayObject)
 
-            # Remove the display object from the list of children
-            newList = []
-            for child in @children
-                do (child)->
-                    if(child != displayObject)
-                        newList.push(child)
-            @children = newList
+                # Add the DisplayObject domElement into the parent domElement
+                jQuery(@domElement).append(displayObject.domElement)
 
-            # Remove the DisplayObject domElement from the parent domElement
-            jQuery(@domElement).remove(displayObject.domElement)
+            ###
+            # Remove a DisplayObject instance from the container
+            # @parameter displayObject a DisplayObject instance that has to be removed
+            ###
+            removeChild:(displayObject)=>
+
+                # Remove the display object from the list of children
+                newList = []
+                for child in @children
+                    do (child)->
+                        if(child != displayObject)
+                            newList.push(child)
+                @children = newList
+
+                # Remove the DisplayObject domElement from the parent domElement
+                jQuery(@domElement).remove(displayObject.domElement)
 
 )
+

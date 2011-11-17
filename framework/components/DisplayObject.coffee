@@ -3,21 +3,26 @@
     in the DOM
 ###
 
-solid.load(['solid.Root'], (S)->
+define(
+    "components/DisplayObject"
 
-    class solid.components.DisplayObject extends S.Root
+    ["Root"],
 
-        @_domElement
+    (Root)->
+        class solid.components.DisplayObject extends Root
 
-        constructor:->
-            super()
+            @_domElement
 
-        render:=>
-            super()
+            constructor:->
+                super()
 
-        getDomElement:=>
-            if !@_domElement
-                @_domElement = document.createElement('div')
+            render:=>
+                super()
 
-            return @_domElement
+            getDomElement:=>
+                if !@_domElement
+                    @_domElement = document.createElement('div')
+
+                return @_domElementV
 )
+

@@ -15,30 +15,33 @@
 
     <!-- All you need -->
     <script src='../../framework/libs/jquery.js' type='text/javascript'></script>
-    <script src='../../framework/libs/lazyload.js' type='text/javascript'></script>
-    <script data-init='true' src="../../framework/init.js"  type='text/javascript'></script>
+    <script data-main='../../framework/' src='../../framework/libs/require.js' type='text/javascript'></script>
+    <script src="../../framework/init.js"  type='text/javascript'></script>
 
     <script type="text/javascript">
 
-        // Load the requested libraries and call the function
-        // It ensure that all the loaded classes are added to the S object passed
-        // as argument
-/*
-        solid.load(["solid.Application", "solid.components.Button"], function(S){
+        require(
 
-            debugger;
+            ["Application", "components/Button"],
 
-            var app = new S.Application();
-            var btn = new S.Button("click me");
+            //The function to execute when all dependencies have loaded. The arguments
+            //to this function are the array of dependencies mentioned above.
+            function (Application, Button) {
 
-            btn.on("click", function(evt){
-                alert("Hello World!");
-            });
+                debugger;
 
-            app.addChild(btn);
+                var app = new Application();
+                var btn = new Button("click me");
+                return;
+                btn.on("click", function(evt){
+                    alert("Hello World!");
+                });
 
-        });
-*/
+                app.addChild(btn);
+            }
+        )
+
+
     </script>
 
   </body>
