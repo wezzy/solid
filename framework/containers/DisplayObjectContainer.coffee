@@ -1,5 +1,5 @@
 
-solid.load(['solid.compoments.DisplayObject'], (S)->
+solid.load(['solid.components.DisplayObject'], (S)->
 
     class solid.DisplayObjectContainer extends S.DisplayObject
 

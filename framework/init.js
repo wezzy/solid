@@ -6,11 +6,15 @@
 // Global namespace for Solid
 var solid = {};
 solid.components = {};
+solid.containers = {};
 
 // Set to zero to prevent logging
 solid.debugLevel = 1;
 
+// Some private attributes
 solid._packages = {};
+solid._loadedModules = [];
+solid._loadQueue = [];
 
 /*
  * Load components and required files.
@@ -34,8 +38,8 @@ solid._packages = {};
  * If the requested file has a "/" character it loads the file considering the request as the path of the file.
  */
 solid.load = function(requirements, callback){
-    // if SOLID_PATH is defined prepend the path to each file required
 
+    // if SOLID_PATH is defined prepend the path to each file required
     if(!window.SOLID_PATH){
 
         // Define SOLID_PATH using the path of this file
@@ -59,7 +63,7 @@ solid.load = function(requirements, callback){
         path = path.replace(pathPieces[pathPieces.length - 1], "");
         path = path.replace(/\.\.\//gi, "");
 
-        var solidPath = window.location.origin;
+        var solidPath = window.location.protocol + "//" + window.location.host;
         for(i = 0; i < urlPieces.length - 1 - backCounter; i++){
             if(urlPieces[i].length > 0){
                 solidPath += "/";
@@ -80,9 +84,12 @@ solid.load = function(requirements, callback){
         var path = requirements[i];
 
         if(path.indexOf("/") >= 0){
+
             // This is NOT a package it's a real path
             urls.push(path);
+
         }else{
+
             var pathPieces = path.split(".");
             var fileName = pathPieces[pathPieces.length - 1];
 
@@ -98,16 +105,17 @@ solid.load = function(requirements, callback){
             pathPieces[pathPieces.length - 1] = "";
             path = pathPieces.join("/");
             path = path.replace("${SOLID_PATH}", window.SOLID_PATH);
-            path += fileName + ".js";
+            path = path + fileName + ".js";
 
             // Append the modified URL the list that has to be loaded.
-            urls.push(path);console.log(path);
-
+            urls.push(path);
+            // console.log("Carico:" + path);
         }
 
     }
 
     var internalCallback = function(){
+
         var parameter = {};
         for(var i = 0; i < fileNames.length; i++){
             var fn = fileNames[i];
@@ -125,7 +133,52 @@ solid.load = function(requirements, callback){
 
     }
 
-    require(urls, internalCallback);
+
+    // Filter already loaded modules
+    var list = [];
+    for(var i = 0; i < urls.length; i++){
+        var url = urls[i];
+        var founded = false;
+        for(var j = 0; j < solid._loadedModules.length; j++){
+            if(solid._loadedModules[j] == url){
+                founded = true;
+                break;
+            }
+        }
+
+        if(!founded){
+            list.push(url);
+        }
+    }
+
+    solid._loadQueue = list;
+
+    if(solid._loadQueue.length > 0){
+
+        solid._loadQueue.reverse();
+
+        _internalLoader = function(url){
+
+            jQuery.get(url, function(evt){
+
+                eval(evt.responseText);
+
+                if(urls.length > 0){
+                    _internalLoader(solid._loadQueue.pop());
+                }else{
+                    internalCallback();
+                }
+
+            });
+        }
+
+        _internalLoader(solid._loadQueue.pop());
+
+    }else{
+        internalCallback();
+    }
+
+
 }
 
 /*
@@ -141,14 +194,3 @@ solid.definePackage = function(name, path){
 // Solid home directory, epecially
 solid.definePackage("libs", "${SOLID_PATH}/libs");
 solid.definePackage("solid", "${SOLID_PATH}");
-
-solid.load(['libs.jquery',
-            'libs.classy',
-            'solid.Logger',
-            'solid.Application'], function(S) {
-
-    // Don't interfere with the rest of the world
-    S.Class = Class.$noConflict();
-    jQuery.noConflict()
-
-});

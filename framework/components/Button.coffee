@@ -9,6 +9,7 @@ solid.load(['solid.components.DisplayObject'], (S)->
 
         @label
         @button
+        @_displayed = false
 
         constructor:(@label)->
             super()
@@ -21,5 +22,7 @@ solid.load(['solid.components.DisplayObject'], (S)->
 
         render:=>
             super()
-
+            if !@_displayed
+                domEl = @getDomElement()
+                $(domEl).append(@button)
 )
