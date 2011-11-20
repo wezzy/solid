@@ -12,7 +12,7 @@ solid.containers = {}
 solid.debugLevel = 1
 
 # Avoid namespace conflicts with $
-jQuery.noConflict()
+# jQuery.noConflict()
 
 # Export the solid namespace
 window.solid = solid

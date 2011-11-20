@@ -8,6 +8,5 @@
   solid.components = {};
   solid.containers = {};
   solid.debugLevel = 1;
-  jQuery.noConflict();
   window.solid = solid;
 }).call(this);

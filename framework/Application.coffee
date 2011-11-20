@@ -8,7 +8,7 @@ define(
 
     "Application",
 
-    ['containers/DisplayObjectContainer'],
+    ['containers/DisplayObjectContainer', 'libs/jquery'],
 
     (DisplayObjectContainer)->
 

@@ -11,7 +11,7 @@
     child.__super__ = parent.prototype;
     return child;
   };
-  define("Application", ['containers/DisplayObjectContainer'], function(DisplayObjectContainer) {
+  define("Application", ['containers/DisplayObjectContainer', 'libs/jquery'], function(DisplayObjectContainer) {
     return solid.Application = (function() {
       __extends(Application, DisplayObjectContainer);
       function Application() {
