@@ -5,12 +5,12 @@
 
 define(
     "components/DisplayObject"
+    ["Root", "events/EventEmitter"],
+    (Root, EventEmitter)->
 
-    ["Root"],
-
-    (Root)->
         class solid.components.DisplayObject extends Root
 
+            @include EventEmitter
             @_domElement
 
             constructor:->

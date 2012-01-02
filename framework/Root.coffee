@@ -4,7 +4,6 @@
 
 define(
     "Root",
-
     ()->
         moduleKeywords = ['extended', 'included']
 

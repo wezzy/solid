@@ -11,9 +11,10 @@
     child.__super__ = parent.prototype;
     return child;
   };
-  define("components/DisplayObject", ["Root"], function(Root) {
+  define("components/DisplayObject", ["Root", "events/EventEmitter"], function(Root, EventEmitter) {
     return solid.components.DisplayObject = (function() {
       __extends(DisplayObject, Root);
+      DisplayObject.include(EventEmitter);
       DisplayObject._domElement;
       function DisplayObject() {
         this.getDomElement = __bind(this.getDomElement, this);
