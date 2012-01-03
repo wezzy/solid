@@ -1,10 +1,10 @@
 ### Button Class###
 # Button create a standard button
 
-define(
+S.export(
 
-    "libs/solid/widgets/Button",
-    ["libs/solid/widgets/AbstractWidget"],
+    "solid.widgets.Button",
+    ["solid.widgets.AbstractWidget"],
     (AbstractWidget)->
 
         class Button extends AbstractWidget

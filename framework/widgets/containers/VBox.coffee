@@ -3,8 +3,8 @@
 
 define(
 
-    "libs/solid/widgets/containers/VBox",
-    ["libs/solid/widgets/AbstractWidget"],
+    "solid.widgets.containers.VBox",
+    ["solid.widgets.AbstractWidget"],
     (AbstractWidget)->
 
         class VBox extends AbstractWidget

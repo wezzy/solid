@@ -6,8 +6,8 @@
 # `WIDGET_ADDED` - when a widget is added
 # `WIDGET_REMOVED` - when a widget is removed
 #
-define(
-    "libs/solid/widgets/AbstractWidget"
+S.export(
+    "solid.widgets.AbstractWidget"
     ()->
 
         _createDomBuffer = _.once(()->

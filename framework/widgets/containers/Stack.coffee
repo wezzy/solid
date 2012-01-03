@@ -1,10 +1,10 @@
 ### Stack Class###
 # Stack hanlde more objects and display just one widget at time
 
-define(
+S.export(
 
-    "libs/solid/widgets/containers/Stack",
-    ["libs/solid/widgets/AbstractWidget"],
+    "solid.widgets.containers.Stack",
+    ["solid.widgets.AbstractWidget"],
     (AbstractWidget)->
 
         class Stack extends AbstractWidget

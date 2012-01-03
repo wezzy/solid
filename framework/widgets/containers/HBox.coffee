@@ -3,8 +3,8 @@
 
 define(
 
-    "libs/solid/widgets/containers/HBox",
-    ["libs/solid/widgets/AbstractWidget"],
+    "solid.widgets.containers.HBox",
+    ["solid.widgets.AbstractWidget"],
     (AbstractWidget)->
 
         class HBox extends AbstractWidget
