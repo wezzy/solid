@@ -1,7 +1,7 @@
 ### VBox Class###
 # VBox dispose children one below the other
 
-define(
+S.export(
 
     "solid.widgets.containers.VBox",
     ["solid.widgets.AbstractWidget"],

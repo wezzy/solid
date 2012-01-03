@@ -2,7 +2,7 @@
     Add the ability to fire events to Objects
 ###
 
-define(
+S.export(
     "events/EventEmitter",
     [],
     ()->

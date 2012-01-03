@@ -1,7 +1,7 @@
 ### HBox Class###
 # HBox dispose children on the same line
 
-define(
+S.export(
 
     "solid.widgets.containers.HBox",
     ["solid.widgets.AbstractWidget"],
