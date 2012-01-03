@@ -53,7 +53,6 @@ internalDefine = window.define
 solid.import = (name, callback)->
     if !solid.initialized
         initialize()
-    debugger
     name = _.map(name, (el)->
         return fixPath(el)
     )
