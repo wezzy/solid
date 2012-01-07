@@ -22,5 +22,5 @@ S.export(
 
                 label = this.options.label || "LABEL"
 
-                $(@el).html(label)
+                jQuery(@el).html(label)
 )
