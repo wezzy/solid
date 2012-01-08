@@ -31,6 +31,8 @@ S.export(
                 @id = options.id || null
                 @children = []
 
+                @render()
+
             #### * render()* method takes one arguments
             #
             # render the element

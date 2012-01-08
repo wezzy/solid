@@ -15,7 +15,6 @@ S.export(
             #### *constructor()* method takes an object with the options
             constructor:(options)->
                 super(options)
-                @render()
                 
             render:=>
                 super()

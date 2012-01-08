@@ -9,9 +9,9 @@ S.export(
             className: "solid_select"
 
             constructor:(options)->
-                super(options)
                 options.data? @data = options.data
-                @render()
+                super(options)
+                
 
             render:()=>
                 super()

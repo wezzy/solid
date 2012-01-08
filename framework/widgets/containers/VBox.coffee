@@ -14,9 +14,9 @@ S.export(
 
             #### *constructor()* method takes an object with the options
             constructor:(options)->
+                options? options.padding = options.padding || 0
                 super(options)
-                @options.padding = @options.padding || 0
-                @render()
+                
 
             render:=>
                 super()

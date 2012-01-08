@@ -6,8 +6,8 @@ S.export(
         class Absolute extends AbstractWidget
 
             constructor:(options)->
-                super(options)
                 jQuery(@el).bind("resize", @render)
+                super(options)
             
             #### * addChild(`widget`)* method takes one arguments
             #* the *widget* to add to the widget as a child. It must be a subclass of AbstractWidget

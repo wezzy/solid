@@ -14,12 +14,9 @@ S.export(
 
             #### *constructor()* method takes an object with the options
             constructor:(options)->
+                options? options.padding = options.padding || 0
                 super(options)
-                @options.padding = @options.padding || 0
-                @render()
-
-            render:=>
-                super()
+               
 
             #### * addChild(`widget`)* method takes one arguments
             #* the *widget* to add to the widget as a child. It must be a subclass of AbstractWidget
