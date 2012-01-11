@@ -40,6 +40,7 @@ S.export(
                 super()
                 $(@el).attr('id', @id)
                 @trigger("RENDERING_COMPLETE", this)
+                return this
 
             #### * addChild(`widget`)* method takes one arguments
             #* the *widget* to add to the widget as a child. It must be a subclass of AbstractWidget
