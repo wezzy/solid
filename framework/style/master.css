@@ -7,5 +7,24 @@
  * this prevent the browser to render components that are not ready yet.
  */
 .SApp > *{
-  display: none;
+    display: none;
+}
+
+/*
+ * Panel
+ * */
+.solid_panel{
+    position: absolute;
+    background-color: #282828;
+    z-index: 10;
+    top: 100px;
+    left: 20px;
+    padding: 5px;
+    -webkit-border-radius: 5px;
+}
+
+
+.solid_panel .header{
+    width: 100%;
+    height: 10px;
 }
